@@ -1,0 +1,74 @@
+/* Custom Styles (Assuming Tailwind is loaded via CDN in index.html) */
+
+/* Custom Styles */
+body {
+    background-color: #FFFFFF;
+    color: #1C1C1C; /* Dark text for light background */
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+.gradient-text {
+    /* Pink to Gold Gradient */
+    background: linear-gradient(90deg, #E9687C, #FACC70);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.gradient-bg-card {
+    /* Very subtle gradient on light background for cards */
+    background: linear-gradient(145deg, #FFFFFF 0%, #FAFAFA 100%);
+}
+.hero-bg-overlay {
+    position: relative;
+    overflow: hidden;
+    background-color: #FAFAFA; /* Light background for hero section */
+}
+.hero-bg-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Subtle Pink and Gold Radial Background Effect */
+    background: radial-gradient(circle at 75% 10%, rgba(233, 104, 124, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 25% 90%, rgba(250, 204, 112, 0.1) 0%, transparent 40%);
+    pointer-events: none;
+}
+.timeline-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    /* Pink to Gold Timeline Line */
+    background: linear-gradient(to bottom, #E9687C, #FACC70);
+    height: 100%;
+    transform: translateX(-50%);
+}
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 20px;
+        transform: translateX(0);
+    }
+}
+
+/* Custom Scrollbar for better aesthetic */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #FAFAFA;
+}
+::-webkit-scrollbar-thumb {
+    background: #E9687C;
+    border-radius: 4px;
+}
+
+/* New: Project Card Hover Effect */
+.project-card:hover .project-title {
+    color: #E9687C; /* Primary Pink color on hover */
+    transition: color 300ms;
+}
+.project-card:hover .project-link i {
+    transform: translateX(4px);
+}
